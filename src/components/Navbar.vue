@@ -1,52 +1,61 @@
 <template>
   <nav>
     <v-toolbar flat app color="grey darken-2">
-        <v-app-bar-nav-icon class="grey--text lighten-4" @click="drawer= !drawer">
-        </v-app-bar-nav-icon>
-        <v-toolbar-title class="text-uppercase grey--text lighten-4">
-            <span class="font-weight-light">Todo</span>
-            <span>Ninja</span>
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn plain color="grey lighten-4"> 
-           <span>sign out</span>
-           <v-icon right>mdi-exit-to-app</v-icon> 
-        </v-btn>
+      <v-app-bar-nav-icon
+        class="grey--text lighten-4"
+        @click="drawer = !drawer"
+      >
+      </v-app-bar-nav-icon>
+      <v-toolbar-title class="text-uppercase grey--text lighten-4">
+        <span class="font-weight-light">Todo</span>
+        <span>Ninja</span> </v-toolbar-title
+      >
+      <v-spacer></v-spacer>
+      <v-btn plain color="grey lighten-4">
+        <span>sign out</span>
+        <v-icon right>mdi-exit-to-app</v-icon>
+      </v-btn>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" app class="grey darken-2">
-       <v-btn plain color="white" class="mt-2" @click="drawer= !drawer">
-            <span>back</span>
-            <v-icon right>mdi-arrow-left</v-icon>
-        </v-btn>
-        <v-list nav dense>
-            <v-list-item-group v-model="selectedItem" color="white darken-3">
-                <v-list-item v-for="(item,i) in items" :key="i" router :to="item.route">
-                    <v-list-item-icon>
-                        <v-icon class="white--text">{{item.icons}}</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                        <v-list-item-title class="white--text">{{item.text}}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list-item-group>
-        </v-list>
+      <v-btn plain color="white" class="mt-2" @click="drawer = !drawer">
+        <span>back</span>
+        <v-icon right>mdi-arrow-left</v-icon>
+      </v-btn>
+      <v-list nav dense>
+        <v-list-item-group v-model="selectedItem" color="white darken-3">
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+            router
+            :to="item.route"
+          >
+            <v-list-item-icon>
+              <v-icon class="white--text">{{ item.icons }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="white--text">{{
+                item.text
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
-</nav>
+  </nav>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            drawer: false,
-            selectedItem: 0,
-            items:[
-                    {text:'Dashboard', icons:'mdi-view-dashboard', route:'/'},
-                    {text:'My Files', icons:'mdi-folder', route:'/files'},
-                    {text:'Team', icons:'mdi-account-multiple', route:'/team'},
-            ],
-        }
-    }
-    
-}
+  data() {
+    return {
+      drawer: false,
+      selectedItem: 0,
+      items: [
+        { text: "Dashboard", icons: "mdi-view-dashboard", route: "/" },
+        { text: "My Files", icons: "mdi-folder", route: "/files" },
+        { text: "Team", icons: "mdi-account-multiple", route: "/team" },
+      ],
+    };
+  },
+};
 </script>

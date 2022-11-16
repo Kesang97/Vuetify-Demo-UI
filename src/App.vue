@@ -1,31 +1,26 @@
 <template>
   <v-app>
-    <Navbar/>
-
-    <v-main>
-      <v-container>
-      <home-demo/>
-    </v-container>
-    </v-main>
-    
+      <Navbar/>
+      <v-main>
+        <router-view></router-view>
+      </v-main>
 
   </v-app>
 </template>
 
 <script>
-import HomeDemo from './components/home-demo.vue';
-import Navbar from './components/Navbar.vue';
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
-
-  components: {
-    HomeDemo,
+  components: { 
     Navbar
-  },
-
-  data: () => ({
-    //
-  }),
-};
+   },
+  data() {
+    return{
+      
+    }
+  }
+}
 </script>
+
