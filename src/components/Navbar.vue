@@ -1,27 +1,27 @@
 <template>
   <nav>
-    <v-toolbar flat app color="grey darken-2">
+    <v-toolbar flat app>
       <!-- navbar icon/menu bar icon -->
       <v-app-bar-nav-icon
-        class="grey--text lighten-4"
+        class="grey--text darken-4"
         @click="drawer = !drawer"
       >
       </v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase grey--text lighten-4">
+      <v-toolbar-title class="text-uppercase grey--text darken-4">
         <span class="font-weight-light">Todo</span>
-        <span>Ninja</span> </v-toolbar-title
+        <span class="font-weight-bold">Ninja</span> </v-toolbar-title
       >
       <!-- v-spacer creates an space between two elements -->
       <v-spacer></v-spacer> 
 
-      <v-btn plain color="grey lighten-4">
+      <v-btn plain color="grey darken-2">
         <span>sign out</span>
         <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-toolbar>
     <!-- Side nav drawer design using v-list -->
 
-    <v-navigation-drawer v-model="drawer" app class="grey darken-2">
+    <v-navigation-drawer v-model="drawer" app class="purple darken-2">
       <v-btn plain color="white" class="mt-2" @click="drawer = !drawer">
         <span>back</span>
         <v-icon right>mdi-arrow-left</v-icon>
