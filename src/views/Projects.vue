@@ -31,11 +31,7 @@
 export default {
   data(){
     return{
-      items: [
-          {col: 'Third Column'},
-          {col: 'Fourth Column'},
-          {col: 'Fifth Column'},
-      ]
+     
     }
   }
   
