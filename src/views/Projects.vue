@@ -2,22 +2,14 @@
   <div class="projects">
     <h1 class="subtitle-1 grey--text">Projects</h1>
 
-    <v-container class="my-5">
-      <v-row justify="center">
-        <v-col cols="12" md="4">
-          <v-btn outlined block color="primary">First column</v-btn>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-btn outlined block color="primary">second column</v-btn>
-        </v-col>
+ 
+    <v-badge bordered color="error" icon="mdi-account" overlap>
+      <v-btn class="white--text" color="error" depressed>
+        Lock Account
+      </v-btn>
       
-      </v-row>
-      <v-row>
-       <v-col>
-        
-       </v-col>
-      </v-row>   
-    </v-container>
+      </v-badge>
+       
 
   </div>
 </template>
@@ -31,7 +23,7 @@
 export default {
   data(){
     return{
-     
+    
     }
   }
   

@@ -1,19 +1,28 @@
 <template>
-  <div class="dashboard">
-    <v-breadcrumbs :items="items" large></v-breadcrumbs>
+  <div class="dashboard pt-2">
+    <h1 class="subtitle-1 grey--text">Dashboard</h1>
 
     <v-container class="my-5">
-      <v-row class="mb-5">
-        <v-btn small text color="grey" @click="sortBy('title')">
-          <v-icon small left>mdi-folder</v-icon>
-          <span class="caption text-lowercase">By project name</span>
-        </v-btn>
-        <v-btn small text color="grey">
-          <v-icon small left>mdi-account-multiple</v-icon>
-          <span class="caption text-lowercase">By Person</span>
-        </v-btn>      
+      <v-row class="mb-5 mt-5" >
+        <v-tooltip top>
+          <template v-slot:activator="{on, attrs}">
+            <v-btn small text color="grey" @click="sortBy('title')" v-on="on" v-bind="attrs">
+              <v-icon small left>mdi-folder</v-icon>
+              <span class="caption text-lowercase">By project name</span>
+            </v-btn>
+          </template>
+          <span>Sort projects by project name</span>
+        </v-tooltip>  
+        <v-tooltip top>
+          <template v-slot:activator="{on, attrs}">
+            <v-btn small text color="grey" @click="sortBy('person')" v-on="on" v-bind="attrs">
+              <v-icon small left>mdi-account-multiple</v-icon>
+              <span class="caption text-lowercase">By Person</span>
+            </v-btn>
+          </template> 
+          <span>Sort project by person</span> 
+        </v-tooltip>
       </v-row>
-      
       <v-card v-for="project in projects" :key="project.title">
         <v-row :class="`pa-3 project ${project.status}`">
           <v-col cols="12" md="6">
@@ -48,11 +57,6 @@
 export default {
   data(){
     return{
-      items: [
-        {text: 'Dashboard', disabled: false, href: 'breadcrumbs_dashboard'},
-        {text: 'My Projects', disabled: true, href: 'breadcrumbs_projects'},
-        {text: 'Team', disabled: true, href: 'breadcrumbs_team'}
-      ],
       projects:[
         {title: 'Design a new website', person: 'The Net Ninja', due: '1st jan 2022', status: 'ongoing', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque veritatis omnis ipsa inventore porro assumenda eligendi nisi dolor ex nostrum?'},
         {title: 'Code up the homepage', person: 'Chun Li', due: '10th jan 2021', status: 'complete', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque veritatis omnis ipsa inventore porro assumenda eligendi nisi dolor ex nostrum?'},
