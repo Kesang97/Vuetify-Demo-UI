@@ -22,7 +22,13 @@
     <!-- Side nav drawer design using v-list -->
 
     <v-navigation-drawer v-model="drawer" app class="purple darken-2">
-    
+      <v-row justify="space-between">
+        <v-col cols="12" class="mt-5">
+          <v-avatar size="100">
+            <img src="/avatar.png">
+          </v-avatar>
+        </v-col>
+      </v-row>
       <v-list nav dense>
         <v-list-item-group v-model="selectedItem" color="white darken-3">
           <!-- for loop and data binding to it in v-list-item -->
