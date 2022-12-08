@@ -22,13 +22,15 @@
     <!-- Side nav drawer design using v-list -->
 
     <v-navigation-drawer v-model="drawer" app class="purple darken-2">
-      <v-row justify="space-between">
-        <v-col cols="12" class="mt-5">
+      <section class="my-2">
+        <div class="d-flex justify-center">
           <v-avatar size="100">
             <img src="/avatar.png">
           </v-avatar>
-        </v-col>
-      </v-row>
+        </div>
+        <p class="subtitle-2  white--text text-center">Kesang Sherpa</p>
+        
+      </section>
       <v-list nav dense>
         <v-list-item-group v-model="selectedItem" color="white darken-3">
           <!-- for loop and data binding to it in v-list-item -->
@@ -64,5 +66,6 @@ export default {
       ],
     };
   },
+ 
 };
 </script>
