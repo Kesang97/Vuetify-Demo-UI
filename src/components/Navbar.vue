@@ -14,6 +14,21 @@
       <!-- v-spacer creates an space between two elements -->
       <v-spacer></v-spacer> 
 
+      <!-- dropdown Menus -->
+    <v-menu offset-y>
+      <template v-slot:activator="{attrs, on}">
+        <v-btn text color="grey" v-on="on" v-bind="attrs">
+          <v-icon>mdi-chevron-down</v-icon>
+          <span>Menu</span>
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="(item, i) in items" :key="i" @click="$router.push(item.route)">
+          <v-list-item-title>{{ item.text }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
       <v-btn text color="grey">
         <span>sign out</span>
         <v-icon right>mdi-exit-to-app</v-icon>
@@ -29,16 +44,18 @@
           </v-avatar>
         </div>
         <p class="subtitle-2  white--text text-center">Kesang Sherpa</p>
-        
+        <div class="d-flex justify-center mt-4 mb-4">
+          <Popup/>
+        </div>
       </section>
+      
       <v-list nav dense>
         <v-list-item-group v-model="selectedItem" color="white darken-3">
           <!-- for loop and data binding to it in v-list-item -->
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
-            router
-            :to="item.route"
+            @click="$router.push(item.route)"
           >
             <v-list-item-icon>
               <v-icon class="white--text">{{ item.icons }}</v-icon>
@@ -54,7 +71,12 @@
 </template>
 
 <script>
+import Popup from './Popup.vue'
 export default {
+  components: {
+    Popup
+  } ,
+
   data() {
     return {
       drawer: false,
