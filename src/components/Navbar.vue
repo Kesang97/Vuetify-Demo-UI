@@ -8,8 +8,8 @@
       >
       </v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="font-weight-light">Todo</span>
-        <span class="font-weight-bold">Ninja</span>
+        <span class="font-weight-light">on-track</span>
+        <span class="font-weight-bold">Dashboard</span>
       </v-toolbar-title>
       <!-- v-spacer creates an space between two elements -->
       <v-spacer></v-spacer> 
